@@ -26,15 +26,18 @@ const Hero = () => {
   return (
     <header className="hero">
       <div className="section-center hero-center">
-        <article className="hero-info"></article>
-        <div className="underline"></div>
-        <h1>im paul</h1>
-        <h4>developer/engineer</h4>
+        <article className="hero-info">
+          <div>
+            <div className="underline"></div>
+            <h1>i'm paul</h1>
+            <h4>freelance web and mobile UI/UX Designer</h4>
+            <Link to="/contact" className="btn">
+              contact me
+            </Link>
+            <SocialLinks />
+          </div>
+        </article>
         <Image fluid={fluid} className="hero-img" />
-        <Link to="/contact" className="btn">
-          Contact Me
-        </Link>
-        <SocialLinks />
       </div>
     </header>
   )
