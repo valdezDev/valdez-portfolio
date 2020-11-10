@@ -4,8 +4,47 @@ import { graphql } from "gatsby"
 import Blogs from "../components/Blogs"
 // ...GatsbyImageSharpFluid
 
-const Blog = () => {
-  return <h2>blog page</h2>
+const Blog = ({
+  data: {
+    allStrapiBlogs: { nodes: blogs },
+  },
+}) => {
+  return (
+    <Layout>
+      <section className="blog-page">
+        <Blogs blogs={blogs} title="blog" />
+      </section>
+    </Layout>
+  )
 }
+
+export const query = graphql`
+  {
+    allStrapiBlogs {
+      nodes {
+        slug
+        content
+        date(formatString: "MMMM Do, YYYY")
+        desc
+        id
+        title
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    allSiteBuildMetadata {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`
 
 export default Blog
