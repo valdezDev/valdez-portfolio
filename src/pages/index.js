@@ -55,6 +55,7 @@ export const query = graphql`
         desc
         id
         title
+        category
         image {
           childImageSharp {
             fluid {
