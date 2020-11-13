@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://git.heroku.com/valdez-strapi-portfolio.git`,
+        apiURL: `https://valdez-strapi-portfolio.herokuapp.com/`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`jobs`, `projects`, `blogs`],
         singleTypes: [`about`],
